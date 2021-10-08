@@ -1,38 +1,39 @@
-.App {
-  text-align: center;
+body {
+ text-align: center;
+ background-color: #EDF4F8;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header h1 {
+  font-size: 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+header h1 span {
+  color: orange;
 }
 
-.App-link {
-  color: #61dafb;
+#cards {
+  height: 40vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+section {
+  height: 100vh;
+  width: 100vw;
+}
+
+.mochi-image img{
+  width: 13vw;
+  height: 13vw;
+  margin: 60px;
+}
+
+.mochi-board {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  padding-bottom: 5vh;
 }
