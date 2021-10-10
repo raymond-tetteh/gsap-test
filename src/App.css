@@ -105,6 +105,11 @@ section {
   top: auto;
 } */
 
+#mochi-bear {
+  height: 140vh;
+  background-color: #42648A;
+}
+
 #mochi-bear h2 { 
   color: white;
   font-size: 1.7rem;
@@ -123,10 +128,6 @@ section {
   padding-bottom: 5vh;
   margin-left: 5vw;
   margin-right: 5vw;
-}
-
-#mochi-bear {
-  background-color: #42648A;
 }
 
 /* #mochi-on-tracks {

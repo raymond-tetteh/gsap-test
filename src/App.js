@@ -153,8 +153,6 @@ function App() {
         toggleActions: "restart pause reverse pause",
         start: "center+=100 center",
         scrub: true,
-        markers: true,
-        id: "section-2"
       },
       scale: 1.0,
       yPercent: -100,
