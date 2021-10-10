@@ -22,7 +22,6 @@ function App() {
   ScrollTrigger.defaults({ scroller: ".container" });
   
   // wait until DOM has been rendered
-
   // image 1
   useEffect(() => {
     tl.current = gsap.fromTo(image1.current, { scale: 2.5 }, {
@@ -119,6 +118,39 @@ function App() {
   //   })
   // })
 
+  // Mochi bear header
+  useEffect(() => {
+    gsap.fromTo("#mochi-bear-header", { y: -200,autoAlpha: 0},{
+      scrollTrigger: {
+        trigger: "#mochi-bear img",
+        toggleActions: "restart complete reverse complete",
+        start: "top center",
+        end: "+=120 center",
+        scrub: true,
+      },
+      y: 0,
+      autoAlpha: 1,
+    })
+  })
+
+  // Mochi bear 
+  useEffect(() => {
+    gsap.fromTo(".mochi-bear", { x: -1430, autoAlpha: 0},{
+      scrollTrigger: {
+        trigger: "#mochi-bear h1",
+        xPercent: -80,
+        toggleActions: "restart complete reverse complete",
+        start: "top center",
+        end: "+=120 center",
+        scrub: true,
+        pin: true
+      },
+     x: 0,
+      autoAlpha: 1
+    })
+  })
+
+
 
   return (
     <div className="App container">
@@ -136,7 +168,6 @@ function App() {
       </Navbar> */}
      
       <section id="cards">
-        
         <header id="blocks-header">
          <h1>It starts with simple <span>wooden blocks</span></h1>,
         </header>
@@ -150,7 +181,6 @@ function App() {
           <img id="image3" ref={image3} className="board-item" src='/Function_image_3.png' alt="" />
           <img id="image4" ref={image4} className="board-item" src='/Function_image_4.png' alt=""/>
         </div>
-
       </section>
 
       <section id="board">
@@ -162,7 +192,19 @@ function App() {
           <div className="board-overlay" ref={boardRef}></div>
           <img className="mochi-board board-item"  ref={boardRef} src='/Programming_board_image.png' alt=""/> 
         </div>
-        
+      </section>
+
+      <section id="mochi-bear">
+        <header>
+          <h1 id="mochi-bear-header">Watch Mochi Bear execute the function in his Rover robot</h1>,
+        </header>
+        <img className="mochi-bear" src='/Mochi_with_tracks.png' alt="" />
+
+        <header>
+          <h1 id="mochi-bear-header-2">Think it's too simple?You can write more programs with Mochi than there are stars in the Universe</h1>,
+        </header>
+
+         <img className="mochi-start" src='/stars.png' alt="" />
       </section>
 
     </div>

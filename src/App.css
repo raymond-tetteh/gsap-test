@@ -6,13 +6,22 @@ body {
  font-family: Nunito, sans-serif;
 }
 
+.App {
+  overflow-y: scroll;
+  height: 100vh;
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
+}
+
 header {
   margin-top: 5vh;
   margin-bottom: 5vh;
 }
 
 header h1 {
-  font-size: 30px;
+  font-size: 2rem;
+  font-weight: 300;
 }
 
 header h1 span {
@@ -25,7 +34,14 @@ header h1 span {
 
 section {
   height: 100vh;
-  width: 100vw;
+  /* width: 100vw; */
+  /* scroll-snap-type: y mandatory; */
+  display: block;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  scroll-snap-align: start;
+  position: relative;
 }
 
 .mochi-image img{
@@ -44,9 +60,9 @@ section {
 .container {
   overflow-y: scroll;
   height: 100vh;
-  scroll-snap-type: mandatory;
+  /* scroll-snap-type: mandatory;
   scroll-snap-points-y: repeat(100vh);
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory; */
 }
 
 .section {
@@ -94,3 +110,26 @@ section {
   bottom: 0;
   top: auto;
 } */
+
+#mochi-bear-header {
+  color: white;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
+#mochi-bear {
+  background-color: #42648A;
+}
+
+#mochi-bear img {
+  height: 100%;
+  max-width: 100vm;
+  overflow-x: hidden;
+  background-color: #42648A;
+}
+
+#mochi-stars {
+  width: 100%;
+}
