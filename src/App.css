@@ -7,13 +7,10 @@ body {
 }
 
 .App {
+  /* overflow-y: scroll; */
   height: 100vh;
-  scroll-snap-type: y mandatory;
-  display: block;
-  justify-content: center;
-  align-items: center;
-  scroll-snap-align: start;
-  position: relative;
+  scroll-snap-type: mandatory;
+  /* scroll-snap-type: y mandatory; */
 }
 
 header {
@@ -31,35 +28,29 @@ header h2 span {
 }
 
 section {
-  min-height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  padding-bottom: 5vh;
-
-  scroll-snap-type: y mandatory;
-  display: block;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
   scroll-snap-align: start;
-  position: relative;
+  /* position: relative; */
+  overflow: hidden;
 }
 
 .mochi-image img{
   width: 13vw;
   height: 13vw;
-  margin: 60px;
+  /* margin: 60px; */
   /* position: absolute; */
 }
 
 .mochi-board {
   width: 100%;
-  height: 60vh;
+  height: auto;
   display: block;
   /* position: absolute; */
 }
 
-.section {
-  display: flex;
+section {
   justify-content: center;
   align-items: center;
   scroll-snap-align: start;
@@ -69,41 +60,39 @@ section {
 }
 
 #board-container {
-  /* position: absolute; */
-  width: 100%px;
-  height: 60vh;
+  /* position: relative; */
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.board-container::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  color: #FFF;
-}
-
-.board-overlay {
+/* #board-overlay {
   height: 60vh;
   width: 100%;
   background-color: cyan;
   z-index: 99;
   position: absolute;
-  opacity: 0.1;
-}
-
-/* .board-overlay::after {
-  content: "";
-  height: 50%;
-  width: 60vh;
-  background-color: DeepSkyBlue;
-  z-index: 99;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  top: auto;
+  opacity: 0.5;
 } */
+
+
+/* #board-circle {
+  width: 30vw;
+  height: 30vw;
+  border-radius: 50%;
+  background-color: cyan;
+  z-index: -1;
+  position: absolute;
+  opacity: 0.0;
+}  */
+
+#please-go {
+  display: none;
+}
 
 #mochi-bear {
   height: 140vh;

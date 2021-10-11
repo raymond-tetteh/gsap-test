@@ -8,151 +8,178 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   // store a reference to items
-  const image1 = useRef();
-  const image2 = useRef();
-  const image3 = useRef();
-  const image4 = useRef();
   const boardRef = useRef();
   const boardHeaderRef = useRef();
 
   var tl = useRef();
-  var tl2 = useRef();
-
-  // ScrollTrigger.defaults({ scroller: ".container" });
   
   // wait until DOM has been rendered
-  // image 1
-
     
   useEffect(() => {
 
     // image 1
-    tl.current = gsap.fromTo(image1.current, { scale: 2.5 }, {
+    tl.current = gsap.fromTo("#image1", { scale: 2.5 }, {
       scrollTrigger: {
         trigger: boardHeaderRef.current,
         endTrigger: boardRef.current,
         toggleActions: "restart complete reverse complete",
-        start: "top center",
-        end: "50% center",
-        scrub: true,
+        // start: "top center",
+        end: "35% center",
+        scrub: 2,
       },
       scale: 1.0,
-      y: "66.5vh",
-      x: "39vw",
+      y: "46.8vh",
+      x: "24.6vw",
     })
  
 
     // image 2
-    tl.current = gsap.fromTo(image2.current, { scale: 2.5 }, {
+    tl.current = gsap.fromTo("#image2", { scale: 2.5 }, {
       scrollTrigger: {
         trigger: boardHeaderRef.current,
         endTrigger: boardRef.current,
         toggleActions: "restart complete reverse complete",
-        start: "top center",
-        end: "50% center",
-        scrub: true,
+        // start: "top center",
+        end: "35% center",
+        scrub: 2,
       },
       scale: 1.0,
-      y: "72.8vh",
-      x: "10vw"
+      y: "53.8vh",
+      x: "25vw"
     })
 
 
     // image 3
-    tl.current = gsap.fromTo(image3.current, { scale: 2.5 }, {
+    tl.current = gsap.fromTo("#image3", { scale: 2.5 }, {
       scrollTrigger: {
         trigger: boardHeaderRef.current,
         endTrigger: boardRef.current,
         toggleActions: "restart complete reverse complete",
-        start: "top center",
-        end: "50% center",
-        scrub: true,
+        // start: "top center",
+        end: "35% center",
+        scrub: 2,
       },
       scale: 1.0,
-      y: "59.6vh",
-      x: "56vw"
+      y: "55vh",
+      x: "42vw"
     })
 
 
     //image 4
-    tl.current = gsap.fromTo(image4.current, { scale: 2.5 }, {
+    tl.current = gsap.fromTo("#image4", { scale: 2.5 }, {
       scrollTrigger: {
         trigger: boardHeaderRef.current,
         endTrigger: boardRef.current,
         toggleActions: "restart complete reverse complete",
-        start: "top center",
-        end: "50% center",
-        scrub: true,
+        // start: "top center",
+        end: "35% center",
+        scrub: 2,
       },
       scale: 1.0,
-      y: "68.5vh",
-      x: "10vw"
+      y: "64.5vh",
+      x: "24vw"
     })
 
-    tl.current = gsap.fromTo(boardHeaderRef.current, { y: -200, autoAlpha: 0},{
+    tl.current = gsap.fromTo(boardHeaderRef.current, {y: -200, autoAlpha: 0},{
       scrollTrigger: {
-        trigger: boardRef.current,
+        trigger: ".mochi-board",
         toggleActions: "restart complete reverse complete",
-        start: "top center",
-        end: "+=120 center",
-        scrub: true,
+        start: "15% center",
+        end: "35% center",
+        scrub: 2,
       },
      y: 0,
       autoAlpha: 1
     })
 
-  });
+    // // zoom
+    // tl.current = gsap.from(boardRef.current, {
+    //   scrollTrigger: {
+    //     trigger: boardRef.current,
+    //     toggleActions: "restart complete reverse complete",
+    //     start: "bottom bottom",
+    //     // end: "+=220 center",
+    //     pin: true,
+    //     scrub: 3,
+    //   },
+    //   duration: 4,
+    //   scale: 1.2
+    // })
 
-  useEffect(() => {
+    // // Hide header
+    // tl.current = gsap.fromTo(boardHeaderRef.current, {y: -200, autoAlpha: 0}, {
+    //   scrollTrigger: {
+    //     trigger: boardRef.current,
+    //     toggleActions: "restart complete reverse complete",
+    //     start: "bottom bottom",
+    //     end: "+=220 center",
+    //     pin: true,
+    //     scrub: 2,
+    //     markers: true
+    //   },
+    //   css: { display: "block"},
+    //   y: 0,
+    //   autoAlpha: 1
+    // })
+
+    // // Show next header
+    // tl.current = gsap.fromTo(boardRef.current, { scale: 1},{
+    //   scrollTrigger: {
+    //     trigger: boardRef.current,
+    //     toggleActions: "restart complete reverse complete",
+    //     start: "bottom bottom",
+    //     end: "+=220 center",
+    //     pin: true,
+    //     scrub: 2,
+    //   },
+    //   scale: 1.3
+    // })
 
     // Mochi header
-    tl2.current = gsap.fromTo("#mochi-bear-header", { y: -200, autoAlpha: 0},{
+    tl.current = gsap.fromTo("#mochi-bear-header", { y: -200, autoAlpha: 0},{
       scrollTrigger: {
         trigger: "#mochi-bear-header",
         toggleActions: "restart pause reverse pause",
-        start: "bottom center",
-        end: "+=600 center",
-        scrub: true,
+        // start: "bottom center",
+        // end: "+=600 center",
+        scrub: 1,
       },
       y: 0,
       autoAlpha: 1,
     })
 
     // Mochi on tracks
-    tl2.current = gsap.fromTo("#mochi-on-tracks", { xPercent: -100, yPercent: -80}, {
+    tl.current = gsap.fromTo("#mochi-on-tracks", { xPercent: -95, yPercent: -70}, {
       scrollTrigger: {
-        trigger: "#mochi-bear-header",
+        trigger: "#mochi-on-tracks",
         toggleActions: "restart pause reverse pause",
-        start: "top center",
-        end: "1000% bottom",
-        scrub: true,
-        duration: 3
+        start: "top 10%",
+        scrub: 2,
       },
       xPercent: 100,
       yPercent: 100,
-    
     })
 
     // Mochi header go
-    tl2.current = gsap.fromTo("#mochi-bear-header", { y: 0, autoAlpha: 0},{
+    tl.current = gsap.fromTo("#mochi-bear-header", { y: 0, autoAlpha: 1},{
       scrollTrigger: {
         trigger: "#mochi-bear-header",
         toggleActions: "restart pause reverse pause",
-        start: "center center",
-        end: "+=600 center",
+        start: "top 15%",
+        end: "+=300 center",
         scrub: true,
       },
       y: -200,
-      autoAlpha: 1,
+      autoAlpha: 0,
     })
 
-    // Mochi section 2 head
-    tl2.current = gsap.fromTo("#mochi-second-section", { scale: 0.3, autoAlpha:0, yPercent: 100}, {
+    // Mochi section 2
+    tl.current = gsap.fromTo("#mochi-second-section", { scale: 0.3, autoAlpha:0, yPercent: 100}, {
       scrollTrigger: {
         trigger: "#mochi-bear-header",
         toggleActions: "restart pause reverse pause",
-        start: "center+=100 center",
-        scrub: true,
+        // start: "center+=100 center",
+        scrub: 1,
       },
       scale: 1.0,
       yPercent: -100,
@@ -160,58 +187,53 @@ function App() {
     })
 
     // Mochi stars image
-    tl2.current = gsap.fromTo("#mochi-stars", { scale: 0, autoAlpha:0, yPercent: 100}, {
+    tl.current = gsap.fromTo("#mochi-stars", { scale: 0, autoAlpha:0, yPercent: 100}, {
       scrollTrigger: {
         trigger: "#mochi-bear-header-2",
         toggleActions: "restart pause reverse pause",
         start: "top center",
-        scrub: true,
+        scrub: 1,
+        markers: true,
       },
       scale: 1.0,
       yPercent: 0,
-      autoAlpha: 1,
-    })
-
-    // Bottom text
-    tl2.current = gsap.fromTo("#mochi-second-section", { scale: 0.3, autoAlpha:0, yPercent: 100}, {
-      scrollTrigger: {
-        trigger: "#mochi-bear-header-2",
-        toggleActions: "restart pause reverse pause",
-        start: "center center",
-        scrub: true,
-        duration: 3,
-      },
-      ease: "bounce",
-      scale: 1.0,
-      yPercent: -100,
       autoAlpha: 1,
     })
   })
 
   return (
     <div className="App">
-     
+      <section>
+        <header id="blocks-header">
+          <h2>Please <span>scroll</span></h2>
+        </header>
+      </section>
       <section id="cards">
         <header id="blocks-header">
-         <h2>It starts with simple <span>wooden blocks</span></h2>,
+         <h2>It starts with simple <span>wooden blocks</span></h2>
         </header>
 
         <div className="mochi-image">
-          <img id="image1" ref={image1} className="board-item" src='/Function_image_1.png' alt="" />
-          <img id="image2" ref={image2} className="board-item" src='/Function_image_2.png' alt=""/>
+          <img id="image1" className="board-item" src='/Function_image_1.png' alt="" />
+          <img id="image2" className="board-item" src='/Function_image_2.png' alt=""/>
         </div>
 
         <div className="mochi-image">
-          <img id="image3" ref={image3} className="board-item" src='/Function_image_3.png' alt="" />
-          <img id="image4" ref={image4} className="board-item" src='/Function_image_4.png' alt=""/>
+          <img id="image3" className="board-item" src='/Function_image_3.png' alt="" />
+          <img id="image4" className="board-item" src='/Function_image_4.png' alt=""/>
         </div>
 
         <header id="board-header" ref={boardHeaderRef} >
           <h2><span>Put the block on the board.</span><br />You have written your first program</h2>
         </header>
+
+         <header id="please-go" >
+          <h2>Press <span>"Please Go"</span> and..</h2>
+        </header>
         
         <div id="board-container" >
-          <div className="board-overlay" ref={boardRef}></div>
+          <div id="board-overlay" ref={boardRef}></div>
+          {/* <div id="board-circle" ref={boardRef}></div> */}
           <img className="mochi-board board-item"  ref={boardRef} src='/Programming_board_image.png' alt=""/> 
         </div>
       </section>
@@ -223,14 +245,14 @@ function App() {
         <img id="mochi-on-tracks" src='/Mochi_with_tracks.png' alt="" />
 
         <div id="mochi-second-section"> 
-          <header>
+         
             <h2 id="mochi-bear-header-2">Think it's too simple? You can write more programs with Mochi than there are stars in the Universe</h2>,
-          </header>
+          
 
           <img id="mochi-stars" src='/stars.png' alt="" />
 
           <h4>Don't be upset if your little one doesn't come to dinner</h4>
-         </div>
+        </div>
       </section>
 
     </div>
